@@ -15,7 +15,7 @@ def record_words(
         original_data = json.loads(file.read())
 
     for word, translate_word in zip(words_list.split(', '), translate_words_list.split(', ')):
-        new_data = {word: translate_word}
+        new_data = {word.lower(): translate_word}
         original_data.update(new_data)
 
     with open('data/db_of_vocabulary.json', 'w', encoding='utf-8') as file:
